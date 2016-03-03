@@ -6,7 +6,7 @@ module Api
     # GET /prefectures.json
     def index
       @prefectures = Prefecture.all
-      return render json: @prefectures, status: 200
+      #return render json: @prefectures, status: 200
     end
 
     # GET /prefectures/1
