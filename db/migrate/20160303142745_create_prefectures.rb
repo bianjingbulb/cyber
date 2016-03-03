@@ -5,8 +5,6 @@ class CreatePrefectures < ActiveRecord::Migration
       t.string :prefecture_ruby
       t.string :capital
       t.string :capital_ruby
-
-      t.timestamps null: false
     end
   end
 end
