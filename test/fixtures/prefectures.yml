@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prefecture: MyString
+  prefecture_ruby: MyString
+  capital: MyString
+  capital_ruby: MyString
+
+two:
+  prefecture: MyString
+  prefecture_ruby: MyString
+  capital: MyString
+  capital_ruby: MyString

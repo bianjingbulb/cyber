@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prefecture:</strong>
+  <%= @prefecture.prefecture %>
+</p>
+
+<p>
+  <strong>Prefecture ruby:</strong>
+  <%= @prefecture.prefecture_ruby %>
+</p>
+
+<p>
+  <strong>Capital:</strong>
+  <%= @prefecture.capital %>
+</p>
+
+<p>
+  <strong>Capital ruby:</strong>
+  <%= @prefecture.capital_ruby %>
+</p>
+
+<%= link_to 'Edit', edit_prefecture_path(@prefecture) %> |
+<%= link_to 'Back', prefectures_path %>

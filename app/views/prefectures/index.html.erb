@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prefectures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Prefecture</th>
+      <th>Prefecture ruby</th>
+      <th>Capital</th>
+      <th>Capital ruby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prefectures.each do |prefecture| %>
+      <tr>
+        <td><%= prefecture.prefecture %></td>
+        <td><%= prefecture.prefecture_ruby %></td>
+        <td><%= prefecture.capital %></td>
+        <td><%= prefecture.capital_ruby %></td>
+        <td><%= link_to 'Show', prefecture %></td>
+        <td><%= link_to 'Edit', edit_prefecture_path(prefecture) %></td>
+        <td><%= link_to 'Destroy', prefecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prefecture', new_prefecture_path %>
