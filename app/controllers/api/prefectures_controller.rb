@@ -5,7 +5,8 @@ module Api
     # GET /prefectures
     # GET /prefectures.json
     def index
-      @prefectures = Prefecture.all
+      @prefectures = Prefecture.all.order("id desc")
+      return render json: @prefectures
       #return render json: @prefectures, status: 200
     end
 
