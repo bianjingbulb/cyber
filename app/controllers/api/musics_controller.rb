@@ -1,9 +1,7 @@
 module Api
   class MusicsController < ApplicationController
 
-
     def index
-
       if params[:start].present?
         @musics = Music.where("id > ?", params[:start]).order("title asc")
       else
@@ -11,6 +9,10 @@ module Api
       end
 
       if params[:artist_id].present?
+        artist = Artist.where(id: params[:artist_id])
+        unless artist.present?
+          return render json: nil, status: 400
+        end
         @musics = @musics.where(artist_id: params[:artist_id])
       end
 
@@ -25,12 +27,15 @@ module Api
     end
 
     def show
-      @music = Music.find(params[:id])
-      return render json: @music
+      @music = Music.where(id: params[:id])
+      if @music.present?
+        return render json: @music
+      else
+        return render json: nil, status: 404
+      end
     end
 
     def times
-
       if params[:start].present?
         @musics = Music.where("id > ?", params[:start]).order("id asc")
       else
@@ -45,6 +50,10 @@ module Api
 
       if params[:id].present?
         @musics = @musics.where(id: params[:id])
+
+        unless @musics.present?
+          return render json: nil, status: 400
+        end
       end
 
       playHistroyArray = Array.new()
