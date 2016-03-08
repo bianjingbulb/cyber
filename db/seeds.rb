@@ -14,3 +14,7 @@ require "csv"
 CSV.foreach('db/seeds_csv/artist.csv') do |row|
   Artist.create(:id => row[0], :name => row[1], :outline => row[2])
 end
+
+CSV.foreach('db/seeds_csv/music.csv') do |row|
+  Music.create(:id => row[0], :artist_id => row[1], :title => row[2], :outline => row[3])
+end
