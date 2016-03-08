@@ -22,3 +22,7 @@ end
 CSV.foreach('db/seeds_csv/playlist.csv') do |row|
   Playlist.create(:name => row[0], :outline => row[1])
 end
+
+CSV.foreach('db/seeds_csv/playlist_detail.csv') do |row|
+  PlaylistDetail.create(:playlist_name => row[0], :number => row[1], :music_id => row[2])
+end
