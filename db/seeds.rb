@@ -15,17 +15,17 @@ require "csv"
 #  Artist.create(:id => row[0], :name => row[1], :outline => row[2])
 #end
 
-CSV.foreach('db/seeds_csv/playlist.csv') do |row|
-  Playlist.create(:name => row[0], :outline => row[1])
-end
+#CSV.foreach('db/seeds_csv/playlist.csv') do |row|
+#  Playlist.create(:name => row[0], :outline => row[1])
+#end
 
-CSV.foreach('db/seeds_csv/playlist_detail.csv') do |row|
-  PlaylistDetail.create(:playlist_name => row[0], :number => row[1], :music_id => row[2])
-end
+#CSV.foreach('db/seeds_csv/playlist_detail.csv') do |row|
+#  PlaylistDetail.create(:playlist_name => row[0], :number => row[1], :music_id => row[2])
+#end
 
-CSV.foreach('db/seeds_csv/play_history.csv') do |row|
-  PlayHistory.create(:id => row[0], :music_id => row[1], :created_at => row[2])
-end
+#CSV.foreach('db/seeds_csv/play_history.csv') do |row|
+#  PlayHistory.create(:id => row[0], :music_id => row[1], :created_at => row[2])
+#end
 
 CSV.foreach('db/seeds_csv/music.csv') do |row|
   Music.create(:id => row[0], :artist_id => row[1], :title => row[2], :outline => row[3])
