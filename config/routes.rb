@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   namespace :api, { format: 'json' } do
     resources :prefectures
+    resources :musics do
+      get 'times', :on => :collection
+      get 'recent', :on => :collection
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
