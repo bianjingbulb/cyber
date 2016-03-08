@@ -7,6 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require "csv"
 
-CSV.foreach('db/seeds_csv/prefectures.csv') do |row|
-  Prefecture.create(:id => row[0], :prefecture => row[1], :prefecture_ruby => row[2], :capital => row[3], :capital_ruby => row[4])
+#CSV.foreach('db/seeds_csv/prefectures.csv') do |row|
+#  Prefecture.create(:id => row[0], :prefecture => row[1], :prefecture_ruby => row[2], :capital => row[3], :capital_ruby => row[4])
+#end
+
+CSV.foreach('db/seeds_csv/artist.csv') do |row|
+  Artist.create(:id => row[0], :name => row[1], :outline => row[2])
 end
